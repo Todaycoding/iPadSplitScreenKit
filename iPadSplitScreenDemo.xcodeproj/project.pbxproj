@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84CBC36125304EC300071DC7 /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC36025304EC300071DC7 /* OCViewController.m */; };
+		84FBC1362530475800708AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBC1352530475800708AD7 /* AppDelegate.swift */; };
+		84FBC13A2530475800708AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBC1392530475800708AD7 /* ViewController.swift */; };
+		84FBC13D2530475800708AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FBC13B2530475800708AD7 /* Main.storyboard */; };
+		84FBC13F2530475B00708AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FBC13E2530475B00708AD7 /* Assets.xcassets */; };
+		84FBC1422530475B00708AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FBC1402530475B00708AD7 /* LaunchScreen.storyboard */; };
+		E253EE9123A774E5A367F10C /* Pods_iPadSplitScreenDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4637FBB8780D90C73764A292 /* Pods_iPadSplitScreenDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4637FBB8780D90C73764A292 /* Pods_iPadSplitScreenDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadSplitScreenDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F03A1907E549252A5E0A1FE /* Pods-iPadSplitScreenDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPadSplitScreenDemo.release.xcconfig"; path = "Target Support Files/Pods-iPadSplitScreenDemo/Pods-iPadSplitScreenDemo.release.xcconfig"; sourceTree = "<group>"; };
+		84CBC35E25304EC300071DC7 /* iPadSplitScreenDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPadSplitScreenDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		84CBC35F25304EC300071DC7 /* OCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
+		84CBC36025304EC300071DC7 /* OCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
+		84FBC1322530475800708AD7 /* iPadSplitScreenDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadSplitScreenDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84FBC1352530475800708AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84FBC1392530475800708AD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84FBC13C2530475800708AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84FBC13E2530475B00708AD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84FBC1412530475B00708AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84FBC1432530475B00708AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB1AE1D2136E24A55C0D36F /* Pods-iPadSplitScreenDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPadSplitScreenDemo.debug.xcconfig"; path = "Target Support Files/Pods-iPadSplitScreenDemo/Pods-iPadSplitScreenDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84FBC12F2530475800708AD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E253EE9123A774E5A367F10C /* Pods_iPadSplitScreenDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04432CBF1F7DDB2B87D3E913 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAB1AE1D2136E24A55C0D36F /* Pods-iPadSplitScreenDemo.debug.xcconfig */,
+				4F03A1907E549252A5E0A1FE /* Pods-iPadSplitScreenDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84FBC1292530475800708AD7 = {
+			isa = PBXGroup;
+			children = (
+				84FBC1342530475800708AD7 /* iPadSplitScreenDemo */,
+				84FBC1332530475800708AD7 /* Products */,
+				04432CBF1F7DDB2B87D3E913 /* Pods */,
+				D90083DC4E0D89CFC205AB91 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84FBC1332530475800708AD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84FBC1322530475800708AD7 /* iPadSplitScreenDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84FBC1342530475800708AD7 /* iPadSplitScreenDemo */ = {
+			isa = PBXGroup;
+			children = (
+				84FBC1352530475800708AD7 /* AppDelegate.swift */,
+				84FBC1392530475800708AD7 /* ViewController.swift */,
+				84CBC35F25304EC300071DC7 /* OCViewController.h */,
+				84CBC36025304EC300071DC7 /* OCViewController.m */,
+				84FBC13B2530475800708AD7 /* Main.storyboard */,
+				84FBC13E2530475B00708AD7 /* Assets.xcassets */,
+				84FBC1402530475B00708AD7 /* LaunchScreen.storyboard */,
+				84FBC1432530475B00708AD7 /* Info.plist */,
+				84CBC35E25304EC300071DC7 /* iPadSplitScreenDemo-Bridging-Header.h */,
+			);
+			path = iPadSplitScreenDemo;
+			sourceTree = "<group>";
+		};
+		D90083DC4E0D89CFC205AB91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4637FBB8780D90C73764A292 /* Pods_iPadSplitScreenDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84FBC1312530475800708AD7 /* iPadSplitScreenDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84FBC1462530475B00708AD7 /* Build configuration list for PBXNativeTarget "iPadSplitScreenDemo" */;
+			buildPhases = (
+				B1996F3D5E6C1E8E25C19472 /* [CP] Check Pods Manifest.lock */,
+				84FBC12E2530475800708AD7 /* Sources */,
+				84FBC12F2530475800708AD7 /* Frameworks */,
+				84FBC1302530475800708AD7 /* Resources */,
+				C95E27A8B95E7017B2BDE9EA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPadSplitScreenDemo;
+			productName = iPadSplitScreenDemo;
+			productReference = 84FBC1322530475800708AD7 /* iPadSplitScreenDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84FBC12A2530475800708AD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					84FBC1312530475800708AD7 = {
+						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
+					};
+				};
+			};
+			buildConfigurationList = 84FBC12D2530475800708AD7 /* Build configuration list for PBXProject "iPadSplitScreenDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84FBC1292530475800708AD7;
+			productRefGroup = 84FBC1332530475800708AD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84FBC1312530475800708AD7 /* iPadSplitScreenDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84FBC1302530475800708AD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84FBC1422530475B00708AD7 /* LaunchScreen.storyboard in Resources */,
+				84FBC13F2530475B00708AD7 /* Assets.xcassets in Resources */,
+				84FBC13D2530475800708AD7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1996F3D5E6C1E8E25C19472 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPadSplitScreenDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C95E27A8B95E7017B2BDE9EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPadSplitScreenDemo/Pods-iPadSplitScreenDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPadSplitScreenDemo/Pods-iPadSplitScreenDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPadSplitScreenDemo/Pods-iPadSplitScreenDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84FBC12E2530475800708AD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84FBC13A2530475800708AD7 /* ViewController.swift in Sources */,
+				84CBC36125304EC300071DC7 /* OCViewController.m in Sources */,
+				84FBC1362530475800708AD7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84FBC13B2530475800708AD7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84FBC13C2530475800708AD7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84FBC1402530475B00708AD7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84FBC1412530475B00708AD7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84FBC1442530475B00708AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84FBC1452530475B00708AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84FBC1472530475B00708AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAB1AE1D2136E24A55C0D36F /* Pods-iPadSplitScreenDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56M37S52PQ;
+				INFOPLIST_FILE = iPadSplitScreenDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zd.iPadSplitScreenDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iPadSplitScreenDemo/iPadSplitScreenDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84FBC1482530475B00708AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F03A1907E549252A5E0A1FE /* Pods-iPadSplitScreenDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56M37S52PQ;
+				INFOPLIST_FILE = iPadSplitScreenDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zd.iPadSplitScreenDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iPadSplitScreenDemo/iPadSplitScreenDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84FBC12D2530475800708AD7 /* Build configuration list for PBXProject "iPadSplitScreenDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FBC1442530475B00708AD7 /* Debug */,
+				84FBC1452530475B00708AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84FBC1462530475B00708AD7 /* Build configuration list for PBXNativeTarget "iPadSplitScreenDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FBC1472530475B00708AD7 /* Debug */,
+				84FBC1482530475B00708AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84FBC12A2530475800708AD7 /* Project object */;
+}

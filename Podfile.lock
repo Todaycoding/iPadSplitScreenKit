@@ -1,0 +1,16 @@
+PODS:
+  - iPadSplitScreenKit (1.0.0)
+
+DEPENDENCIES:
+  - iPadSplitScreenKit (from `./`)
+
+EXTERNAL SOURCES:
+  iPadSplitScreenKit:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  iPadSplitScreenKit: bff744481883336ea7d25fe433b3c8ccf454dcc9
+
+PODFILE CHECKSUM: 3390ece2913209155987f76ab7836de1d91fbfab
+
+COCOAPODS: 1.9.3
