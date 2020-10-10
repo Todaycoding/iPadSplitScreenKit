@@ -2,7 +2,7 @@
 //  iPadSplitTool.swift
 //  iPadSplitScreenKit
 //
-//  Created by admin on 9/10/2020.
+//  Created by DevDragonLi on 9/10/2020.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ import Foundation
         currentScreenInterfaceType = .Unknown
     }
     
-    static let `tool` = iPadSplitTool()
+    public static let `tool` = iPadSplitTool()
     
     public internal (set) var fullScreen: Bool
     

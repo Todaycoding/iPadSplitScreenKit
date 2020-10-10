@@ -2,7 +2,7 @@
 //  OCViewController.h
 //  iPadSplitScreenDemo
 //
-//  Created by admin on 9/10/2020.
+//  Created by DevDragonLi on 9/10/2020.
 //
 
 #import <UIKit/UIKit.h>

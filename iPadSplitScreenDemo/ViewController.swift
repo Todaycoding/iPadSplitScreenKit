@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  iPadSplitScreenDemo
 //
-//  Created by admin on 9/10/2020.
+//  Created by DevDragonLi on 9/10/2020.
 //
 
 import UIKit
@@ -17,7 +17,19 @@ class ViewController:iPadSplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
+        currentScreenType()
     }
+    
+    func currentScreenType() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10.0) {
+            if iPadSplitTool.tool.fullScreen {
+                print("当前是全屏显示")
+            } else {
+                print("当前为小屏幕")
+            }
+        }
+    }
+    
     
     override func ipadFullScreen() {
         fullScreenButton = UIButton.init(type: .custom)

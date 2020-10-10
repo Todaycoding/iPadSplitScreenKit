@@ -12,11 +12,17 @@ iPadSplitScreenKit（iPad分屏组件）
   s.source           = { :git => 'https://github.com/Todaycoding/iPadSplitScreenKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
-
+  
+  s.default_subspec = 'Swift'
+  
   s.swift_version = '5.0'
   
-  s.source_files  = 'iPadSplitScreenKit/**/*'
+  s.subspec 'Swift' do |ss|
+    ss.source_files  = 'iPadSplitScreenKit/**/*.swift'
+  end
 
-  # s.public_header_files = 'ColorPicker/Protocol/*.h','ColorPicker/Define/ZDColorPickTypeHeader.h'
+  s.subspec 'ObjC' do |ss|
+      ss.source_files = 'iPadSplitScreenKit/ObjC/**/*'
+  end
 
 end
