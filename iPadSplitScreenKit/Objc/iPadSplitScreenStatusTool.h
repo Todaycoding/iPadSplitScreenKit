@@ -28,6 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 【获取时机：viewDidLoad函数中/之后生命周期函数中获取】
 @property (nonatomic, assign, readonly)SplitScreenInterfaceType currentScreenInterfaceType;
 
+/// NOTE：获取当前最详细的屏幕的相对显示【布局时，获取当前屏幕最大宽度等使用】
+/// 【获取时机：APP首屏渲染后】
+@property (nonatomic, assign, readonly)CGFloat currentScreenWidth;
+
+- (void)updateCurrentInterfaceOrientation;
+
 + (instancetype)tool;
 
 

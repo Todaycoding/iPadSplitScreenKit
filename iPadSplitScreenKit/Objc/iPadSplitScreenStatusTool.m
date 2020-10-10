@@ -15,11 +15,16 @@
 
 @property (nonatomic, assign) SplitScreenInterfaceType currentScreenInterfaceType;
 
+@property (nonatomic, assign) CGFloat currentScreenWidth;
 
 @end
 
 
 @implementation iPadSplitScreenStatusTool
+
+- (void)updateCurrentInterfaceOrientation {
+    self.interfaceOrientationLandscape = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
+}
 
 + (instancetype)tool {
     static iPadSplitScreenStatusTool *tool;

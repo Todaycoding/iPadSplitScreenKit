@@ -66,12 +66,12 @@
 
 - (void)split_updateViewLayoutDependenciesWithCurrentSize:(CGSize)currentSize {
     [self split_updateCurrentInterfaceOrientation];
+    [iPadSplitScreenStatusTool.tool setValue:[NSNumber numberWithFloat:currentSize.width] forKey:@"currentScreenWidth"];
     [self split_screenWithCurrentSize:currentSize];
 }
 
 - (void)split_updateCurrentInterfaceOrientation {
-    NSNumber *statusBarOrientationValue = [NSNumber numberWithBool:UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)];
-    [iPadSplitScreenStatusTool.tool setValue:statusBarOrientationValue forKey:@"interfaceOrientationLandscape"];
+    iPadSplitScreenStatusTool.tool.updateCurrentInterfaceOrientation;
 }
 
 - (void)split_screenWithCurrentSize:(CGSize)currentSize {

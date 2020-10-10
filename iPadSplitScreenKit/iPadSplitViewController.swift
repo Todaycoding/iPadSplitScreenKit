@@ -52,11 +52,12 @@ extension iPadSplitViewController {
     }
     
     fileprivate func _updateCurrentInterfaceOrientation()  {
-        iPadSplitTool.tool.fullScreen = UIApplication.shared.statusBarOrientation.isLandscape
+        iPadSplitTool.tool.updateCurrentInterfaceOrientation()
     }
     
     fileprivate func _updateViewLayoutDependenciesWithCurrentSize(currentSize:CGSize) {
         _updateCurrentInterfaceOrientation()
+        iPadSplitTool.tool.currentScreenWidth = currentSize.width
         _screenWithCurrentSize(currentSize: currentSize)
     }
     
