@@ -10,9 +10,16 @@ Status](https://img.shields.io/travis/Todaycoding/iPadSplitScreenKit.svg?style=f
 
 > OC/Swift项目均可使用【参考下文Install部分】，提供能力来快速适配IPad项目的分屏，悬浮屏，横竖屏等
 
+- [官网教程：在 iPad 上使用多任务处理功能](https://support.apple.com/zh-cn/HT207582)
+	- 不同样式，需要APP内部适配处理不同UI。
+	- 针对APP启动（可以分屏模式启动），也需要处理。
+	- 可运行过程Demo体验。
+
+- ![](https://support.apple.com/library/content/dam/edam/applecare/images/zh_CN/iOS/ios13-ipad-pro-multitasking-drag-drop-animation.gif)
+
 ###  iPad 屏幕横竖屏演算
 
-> 以下皆指屏幕相对宽度
+> 以下皆指屏幕相对宽度，对于苹果的临界数据，来进行内部处理的计算逻辑。
 
 -  横屏
 	-  1/3： < 0.40
