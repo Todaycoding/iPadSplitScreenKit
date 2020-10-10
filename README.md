@@ -111,7 +111,7 @@ pod 'iPadSplitScreenKit/ObjC'
  - 当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
 
  #### 辅助说明：
- - 判断当前是否全屏【OC使用此宏即可】 ： ZDISFULLSCREEN
+ - 判断当前是否全屏【OC使用此宏即可】 ： SPLITISFULLSCREEN
 
 
 Author

@@ -108,7 +108,7 @@
     
     if (self.lastScreenInterfaceType == SplitUnknown) {
         [self split_configLastScreenType];
-        if (ZDISFULLSCREEN) {
+        if (SPLITISFULLSCREEN) {
             [self split_configScreenWithIsFull:YES];
         } else {
             [self split_configScreenWithIsFull:NO];
@@ -118,7 +118,7 @@
     }
     BOOL isLastFullScreen = (self.lastScreenInterfaceType < kCHECKISFULLSCREENVALUE);
     [self split_configLastScreenType];
-    if (isLastFullScreen == ZDISFULLSCREEN) {
+    if (isLastFullScreen == SPLITISFULLSCREEN) {
         return;
     }
     
