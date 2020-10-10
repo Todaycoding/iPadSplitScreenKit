@@ -6,10 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <iPadSplitScreenKit/iPadSplitScreenVC.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OCViewController : UIViewController
+@interface OCViewController : iPadSplitScreenVC
 
 @end
 

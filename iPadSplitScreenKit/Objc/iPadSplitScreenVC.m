@@ -6,8 +6,6 @@
 
 #import "iPadSplitScreenVC.h"
 
-#define kCHECKISFULLSCREENVALUE 100
-
 @interface iPadSplitScreenVC ()
 
 @property(nonatomic, assign, getter=isiPadfullScreenViewLoaded) BOOL iPadfullScreenViewLoaded;
@@ -22,7 +20,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self split_updateCurrentInterfaceOrientation];
+        [iPadSplitScreenStatusTool.tool updateCurrentInterfaceOrientation];
         self.lastScreenInterfaceType = SplitUnknown;
     }
     return self;
@@ -35,76 +33,32 @@
 
 #pragma mark ---iPad adapter functions
 
-/// 小屏幕切换到大屏幕【处理逻辑】
-- (void)ipadSmallToFullScreenConfigurations {
-    
-}
+- (void)ipadSmallToFullScreenConfigurations {}
 
-/// 大屏幕切换到小屏幕【处理逻辑】
-- (void)ipadFullToSmallScreenConfigurations {
-    
-}
+- (void)ipadFullToSmallScreenConfigurations {}
 
-/// ipad 全屏展示
 - (void)ipadFullScreen {
     NSString *assertMsg = [NSString stringWithFormat:@"%@【%@】",@"❌：Please implement `ipadFullScreen Function` With", NSStringFromClass([self class])];
     NSAssert(NO, assertMsg);
 }
-/// ipad 小屏幕展示
+
 - (void)ipadSmallScreen {
     NSString *assertMsg = [NSString stringWithFormat:@"%@【%@】",@"❌：Please implement `ipadSmallScreen Function` With", NSStringFromClass([self class])];
     NSAssert(NO, assertMsg);
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    if (!self.isViewLoaded) {
-        return;
-    }
     
-    [self split_updateViewLayoutDependenciesWithCurrentSize:size];
+    if (self.isViewLoaded) {
+        [self split_updateViewLayoutDependenciesWithCurrentSize:size];
+    }
 }
 
 - (void)split_updateViewLayoutDependenciesWithCurrentSize:(CGSize)currentSize {
-    [self split_updateCurrentInterfaceOrientation];
-    [iPadSplitScreenStatusTool.tool setValue:[NSNumber numberWithFloat:currentSize.width] forKey:@"currentScreenWidth"];
-    [self split_screenWithCurrentSize:currentSize];
-}
-
-- (void)split_updateCurrentInterfaceOrientation {
-    iPadSplitScreenStatusTool.tool.updateCurrentInterfaceOrientation;
-}
-
-- (void)split_screenWithCurrentSize:(CGSize)currentSize {
     
-    CGFloat fullWidth = UIScreen.mainScreen.bounds.size.width;
-    CGFloat currentScreenWidth = currentSize.width;
-    
-    if(iPadSplitScreenStatusTool.tool.interfaceOrientationLandscape) {
-        if (currentScreenWidth < (fullWidth * 0.40)) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadLandscapeThirdScreen];
-        } else if (currentScreenWidth < fullWidth * 0.60) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadLandscapeHalfScreen];
-        } else if (currentScreenWidth < (fullWidth * 0.80)) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadLandscapeTwoThirdScreen];
-        } else if (currentScreenWidth == fullWidth) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadLandscapeFullScreen];
-        }
-    } else {
-        if (currentScreenWidth < (fullWidth * 0.50)) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadPortraitThirdScreen];
-        } else if (currentScreenWidth < fullWidth * 0.70) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadPortraitTwoThirdScreen];
-        } else if (currentScreenWidth == fullWidth) {
-            [self split_handleDisplayElementsWithChangedType:SplitPadPortraitFullScreen];
-        }
-    }
-}
-
-- (void)split_handleDisplayElementsWithChangedType:(SplitScreenInterfaceType)changedScreenInterfaceType {
-    BOOL fullScreen = (changedScreenInterfaceType < kCHECKISFULLSCREENVALUE);
-    [iPadSplitScreenStatusTool.tool setValue:[NSNumber numberWithBool:fullScreen] forKey:@"fullScreen"];
-    
-    [iPadSplitScreenStatusTool.tool setValue:[NSNumber numberWithInteger:changedScreenInterfaceType] forKey:@"currentScreenInterfaceType"];
+    [iPadSplitScreenStatusTool.tool updateCurrentInterfaceOrientation];
+    [iPadSplitScreenStatusTool.tool updateCurrentInterfaceSize:currentSize];
+    [iPadSplitScreenStatusTool.tool updateScreenInterfaceAttributes];
     
     if (self.lastScreenInterfaceType == SplitUnknown) {
         [self split_configLastScreenType];
@@ -116,7 +70,8 @@
         
         return;
     }
-    BOOL isLastFullScreen = (self.lastScreenInterfaceType < kCHECKISFULLSCREENVALUE);
+    
+    BOOL isLastFullScreen = (self.lastScreenInterfaceType < SplitPadCheckFullScreen);
     [self split_configLastScreenType];
     if (isLastFullScreen == SPLITISFULLSCREEN) {
         return;

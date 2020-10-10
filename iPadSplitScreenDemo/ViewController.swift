@@ -16,9 +16,17 @@ class ViewController:iPadSplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "点击空白处展示OC版本"
         view.backgroundColor = .darkGray
         currentScreenType()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc = OCViewController.init()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     func currentScreenType() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10.0) {

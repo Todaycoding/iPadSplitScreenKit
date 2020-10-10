@@ -17,14 +17,12 @@
 
 @property (nonatomic, assign) CGFloat currentScreenWidth;
 
+@property (nonatomic, assign) CGFloat currentScreenHeight;
+
 @end
 
 
 @implementation iPadSplitScreenStatusTool
-
-- (void)updateCurrentInterfaceOrientation {
-    self.interfaceOrientationLandscape = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
-}
 
 + (instancetype)tool {
     static iPadSplitScreenStatusTool *tool;
@@ -33,6 +31,48 @@
         tool = [[self alloc] init];
     });
     return tool;
+}
+
+- (void)updateCurrentInterfaceOrientation {
+    self.interfaceOrientationLandscape = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
+}
+
+- (void)updateCurrentInterfaceSize:(CGSize)currentsize {
+    if (CGSizeEqualToSize(currentsize, CGSizeZero)) {
+        return;
+    }
+    self.currentScreenWidth = currentsize.width;
+    self.currentScreenHeight = currentsize.height;
+}
+
+- (void)updateScreenInterfaceAttributes {
+    
+    CGFloat fullWidth = UIScreen.mainScreen.bounds.size.width;
+    
+    if(self.interfaceOrientationLandscape) {
+        if (self.currentScreenWidth < (fullWidth * 0.40)) {
+            self.currentScreenInterfaceType = SplitPadLandscapeThirdScreen;
+        } else if (self.currentScreenWidth < fullWidth * 0.60) {
+            self.currentScreenInterfaceType = SplitPadLandscapeHalfScreen;
+        } else if (self.currentScreenWidth < (fullWidth * 0.80)) {
+            self.currentScreenInterfaceType = SplitPadLandscapeTwoThirdScreen;
+        } else if (self.currentScreenWidth == fullWidth) {
+            self.currentScreenInterfaceType = SplitPadLandscapeFullScreen;
+        } else {
+            self.currentScreenInterfaceType = SplitUnknown;
+        }
+    } else {
+        if (self.currentScreenWidth < (fullWidth * 0.50)) {
+            self.currentScreenInterfaceType = SplitPadPortraitThirdScreen;
+        } else if (self.currentScreenWidth < fullWidth * 0.70) {
+            self.currentScreenInterfaceType = SplitPadPortraitTwoThirdScreen;
+        } else if (self.currentScreenWidth == fullWidth) {
+            self.currentScreenInterfaceType = SplitPadPortraitFullScreen;
+        } else {
+            self.currentScreenInterfaceType = SplitUnknown;
+        }
+    }
+    self.fullScreen = (self.currentScreenInterfaceType < SplitPadCheckFullScreen);
 }
 
 @end

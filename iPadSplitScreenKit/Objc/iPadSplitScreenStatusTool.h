@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <iPadSplitScreenKit/iPadSplitScreenDefineHeader.h>
 
-/// Bool 类型
+/// BOOL 类型
 #define SPLITISFULLSCREEN (iPadSplitScreenStatusTool.tool.fullScreen)
 
 NS_ASSUME_NONNULL_BEGIN
@@ -32,7 +32,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// 【获取时机：APP首屏渲染后】
 @property (nonatomic, assign, readonly)CGFloat currentScreenWidth;
 
+/// NOTE：获取当前最详细的屏幕的相对显示【布局时，获取当前屏幕最大高度等使用】
+/// 【获取时机：APP首屏渲染后】
+@property (nonatomic, assign, readonly)CGFloat currentScreenHeight;
+
 - (void)updateCurrentInterfaceOrientation;
+
+- (void)updateCurrentInterfaceSize:(CGSize)currentsize;
+
+- (void)updateScreenInterfaceAttributes;
 
 + (instancetype)tool;
 

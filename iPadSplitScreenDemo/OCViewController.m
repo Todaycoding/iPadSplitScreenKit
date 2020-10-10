@@ -6,9 +6,7 @@
 //
 
 #import "OCViewController.h"
-#import "iPadSplitScreenDemo-Swift.h"
-
-#import <iPadSplitScreenKit/iPadSplitScreenVC.h>
+//#import "iPadSplitScreenDemo-Swift.h"
 
 @interface OCViewController ()
 
@@ -22,27 +20,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)isFullScreenCheckDemo {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //        if (ZDISFULLSCREEN) {
-        //            NSLog(@"当前为全屏UI模式");
-        //        } else {
-        //            NSLog(@"当前为小屏UI模式");
-        //        }
+        if (SPLITISFULLSCREEN) {
+            NSLog(@"当前为全屏UI模式");
+        } else {
+            NSLog(@"当前为小屏UI模式");
+        }
     });
 }
 
 
 - (void)ipadSmallScreen {
     [self.view addSubview:self.smallScreenLabel];
-    NSLog(@"ViewController：ipadSmallScreen");
+    NSLog(@"OCViewController：ipadSmallScreen");
 }
 
 - (void)ipadFullScreen {
     [self.view addSubview:self.fullScreenButton];
-    NSLog(@"ViewController：ipadFullScreen");
+    NSLog(@"OCViewController：ipadFullScreen");
 }
 
 - (void)ipadSmallToFullScreenConfigurations {

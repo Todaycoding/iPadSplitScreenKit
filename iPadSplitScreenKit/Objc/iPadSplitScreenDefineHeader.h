@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, SplitScreenInterfaceType) {
     
     SplitPadLandscapeTwoThirdScreen  = 2,  // 约2/3屏幕 横屏【Pad】
     
+    //#define kCHECKISFULLSCREENVALUE 100
+    SplitPadCheckFullScreen          = 100, // 基准类型
+    
     SplitPadLandscapeHalfScreen      = 101,  //  约1/2屏幕 横屏【Pad】
     
     SplitPadLandscapeThirdScreen     = 102,  //  约1/3屏幕 横屏【Pad】
