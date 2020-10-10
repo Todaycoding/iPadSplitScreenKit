@@ -8,7 +8,7 @@
 #import "OCViewController.h"
 #import "iPadSplitScreenDemo-Swift.h"
 
-//#import <iPadSplitScreenKit/iPadSplitScreenVC.h>
+#import <iPadSplitScreenKit/iPadSplitScreenVC.h>
 
 @interface OCViewController ()
 
