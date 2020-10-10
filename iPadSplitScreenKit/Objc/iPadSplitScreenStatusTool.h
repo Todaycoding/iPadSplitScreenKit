@@ -9,7 +9,7 @@
 #import <iPadSplitScreenKit/iPadSplitScreenDefineHeader.h>
 
 /// Bool 类型
-#define ZDISFULLSCREEN (ZDScreenStatusTool.tool.fullScreen)
+#define ZDISFULLSCREEN (iPadSplitScreenStatusTool.tool.fullScreen)
 
 NS_ASSUME_NONNULL_BEGIN
 
