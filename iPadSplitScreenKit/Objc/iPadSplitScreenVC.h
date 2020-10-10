@@ -4,23 +4,8 @@
 //
 //  Created by DevDragonLi on 27/9/2020.
 
-/**
- ZDBaseViewController使用说明：
- 
- 1.  界面控制器继承此控制器类
- 2.1 viewDidLoad拆分到ipadFullScreen或者ipadSmallScreen实现【仅UI逻辑：布局，交互等】。
- 2.2 viewDidLoad中逻辑代码通用不需要改动！！！【 Example viewDidLoad打点，通知等逻辑不变】
- 3. 屏幕出现需要改变布局时刻【移除当前部分视图，保存当前session数据等场景,请ipadSmallToFull/ipadSmallToFull中处理。
- 5. 当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
- 
- 
- 辅助说明：
- 1. 判断当前是否全屏【OC使用此宏即可】 ： ZDISFULLSCREEN
- 
- */
-
 #import <UIKit/UIKit.h>
-#import "iPadSplitScreenStatusTool.h"
+#import <iPadSplitScreenKit/iPadSplitScreenStatusTool.h>
 
 @interface iPadSplitScreenVC : UIViewController
 

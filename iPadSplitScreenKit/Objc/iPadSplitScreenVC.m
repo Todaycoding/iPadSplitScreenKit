@@ -4,27 +4,6 @@
 //
 //  Created by DevDragonLi on 27/9/2020.
 
-/*
- iPad 屏幕横竖屏演算细节：
- 横屏
- 1/3： < 0.40
- 1/2： 0.40 < 0.6
- 2/3：0.6  < 1.0
- 竖屏
- 小：0.5
- 大：0.7
- 横屏数据
- 375  678    981   1366  pro
- 0.274  0.496  0.71 1.00
- 
- 320     507     694       1024  mini
- 0.3125   0.495   0.677       1.00
- 
- 竖屏
- 320     438   768  mini
- 0.41    0.57  1.00
- */
-
 #import "iPadSplitScreenVC.h"
 
 #define kCHECKISFULLSCREENVALUE 100
@@ -78,7 +57,6 @@
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    
     if (!self.isViewLoaded) {
         return;
     }
@@ -130,34 +108,40 @@
     
     if (self.lastScreenInterfaceType == SplitUnknown) {
         [self split_configLastScreenType];
-        if (iPadSplitScreenStatusTool.tool.fullScreen) {
-            [self ipadFullScreen];
-            self.iPadfullScreenViewLoaded = YES;
+        if (ZDISFULLSCREEN) {
+            [self split_configScreenWithIsFull:YES];
         } else {
-            [self ipadSmallScreen];
-            self.iPadsmallScreenViewLoaded = YES;
+            [self split_configScreenWithIsFull:NO];
         }
         
         return;
     }
     BOOL isLastFullScreen = (self.lastScreenInterfaceType < kCHECKISFULLSCREENVALUE);
     [self split_configLastScreenType];
-    if (isLastFullScreen == iPadSplitScreenStatusTool.tool.fullScreen) {
+    if (isLastFullScreen == ZDISFULLSCREEN) {
         return;
     }
     
     if (isLastFullScreen) {
         [self ipadFullToSmallScreenConfigurations];
         if (!self.isiPadsmallScreenViewLoaded) {
-            [self ipadSmallScreen];
-            self.iPadsmallScreenViewLoaded = YES;
+            [self split_configScreenWithIsFull:NO];
         }
     } else {
         [self ipadSmallToFullScreenConfigurations];
         if (!self.iPadfullScreenViewLoaded) {
-            [self ipadFullScreen];
-            self.iPadfullScreenViewLoaded = YES;
+            [self split_configScreenWithIsFull:YES];
         }
+    }
+}
+
+- (void)split_configScreenWithIsFull:(BOOL)isFullScreen {
+    if (isFullScreen) {
+        [self ipadFullScreen];
+        self.iPadfullScreenViewLoaded = YES;
+    } else {
+        [self ipadSmallScreen];
+        self.iPadsmallScreenViewLoaded = YES;
     }
 }
 

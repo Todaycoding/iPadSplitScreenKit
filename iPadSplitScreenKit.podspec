@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iPadSplitScreenKit"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "iPadSplitScreenKit"
   
   s.description  = <<-DESC
@@ -23,6 +23,7 @@ iPadSplitScreenKit（iPad分屏组件）
 
   s.subspec 'ObjC' do |ss|
       ss.source_files = 'iPadSplitScreenKit/ObjC/**/*'
+      ss.public_header_files = 'iPadSplitScreenKit/ObjC/**/*.h'
   end
 
 end

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "iPadSplitScreenDefineHeader.h"
+#import <iPadSplitScreenKit/iPadSplitScreenDefineHeader.h>
 
 /// Bool 类型
 #define ZDISFULLSCREEN (ZDScreenStatusTool.tool.fullScreen)

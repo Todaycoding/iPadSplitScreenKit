@@ -2,8 +2,6 @@
 
 > **iPad 分屏基础组件**
 
-[![CI
-Status](https://img.shields.io/travis/Todaycoding/iPadSplitScreenKit.svg?style=flat)](https://travis-ci.org/Todaycoding/iPadSplitScreenKit)
 [![Version](https://img.shields.io/cocoapods/v/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 [![License](https://img.shields.io/cocoapods/l/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 [![Platform](https://img.shields.io/cocoapods/p/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
@@ -103,6 +101,17 @@ pod 'iPadSplitScreenKit/ObjC'
     }
     
 ```
+
+### iPadSplitScreen 使用说明
+ 
+- 界面控制器继承此控制器类
+ - viewDidLoad拆分到ipadFullScreen或者ipadSmallScreen实现【仅UI逻辑：布局，交互等】。
+ - viewDidLoad中逻辑代码通用不需要改动！！！【 Example viewDidLoad打点，通知等逻辑不变】
+ - 屏幕出现需要改变布局时刻【移除当前部分视图，保存当前session数据等场景,请ipadSmallToFull/ipadSmallToFull中处理。
+ - 当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
+
+ #### 辅助说明：
+ - 判断当前是否全屏【OC使用此宏即可】 ： ZDISFULLSCREEN
 
 
 Author

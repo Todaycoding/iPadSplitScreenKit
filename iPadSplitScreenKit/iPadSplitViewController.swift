@@ -5,8 +5,6 @@
 //  Created by DevDragonLi on 9/10/2020.
 //
 
-
-
 import UIKit
 
 @objcMembers open class iPadSplitViewController: UIViewController {
@@ -47,7 +45,7 @@ import UIKit
 
 extension iPadSplitViewController {
     
-    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {    
         if self.isViewLoaded {
             _updateViewLayoutDependenciesWithCurrentSize(currentSize: size)
         }
