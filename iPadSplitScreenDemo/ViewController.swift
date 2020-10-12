@@ -20,14 +20,7 @@ class ViewController:iPadSplitViewController {
         view.backgroundColor = .darkGray
         currentScreenType()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let vc = OCViewController.init()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
-    
+     
     func currentScreenType() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10.0) {
             if iPadSplitTool.tool.fullScreen {
@@ -37,7 +30,6 @@ class ViewController:iPadSplitViewController {
             }
         }
     }
-    
     
     override func ipadFullScreen() {
         fullScreenButton = UIButton.init(type: .custom)
@@ -67,6 +59,14 @@ class ViewController:iPadSplitViewController {
         fullScreenButton?.isHidden = true
         smallScreenLabel?.isHidden = false
         print("大屏幕模式->小屏幕模式")
+    }
+}
+
+
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc = OCViewController.init()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

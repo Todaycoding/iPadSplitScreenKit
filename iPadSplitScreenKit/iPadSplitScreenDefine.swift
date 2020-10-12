@@ -17,6 +17,8 @@ public enum ScreenInterfaceType: Int {
     
     case  iPadLandscapeTwoThirdScreen  = 2  // 约 2/3屏幕 横屏【Pad】
     
+    case  iPadCheckFullScreen          = 100 // 基准类型
+    
     case  iPadLandscapeHalfScreen      = 101 // 约 1/2屏幕 横屏【Pad】
     
     case  iPadLandscapeThirdScreen     = 102 // 约 1/3屏幕 横屏【Pad】

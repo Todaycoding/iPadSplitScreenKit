@@ -13,13 +13,20 @@ import UIKit
     
     fileprivate var iPadsmallScreenViewLoaded: Bool = false
     
-    fileprivate var lastScreenInterfaceType: ScreenInterfaceType = .Unknown
+    fileprivate var iPadCommonSetuped: Bool = false
     
-    fileprivate var kCHECKISFULLSCREENVALUE: Int = 100
+    fileprivate var lastScreenInterfaceType: ScreenInterfaceType = .Unknown
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         _updateViewLayoutDependenciesWithCurrentSize(currentSize:view.frame.size)
+    }
+    
+    /// 当前界面共同视图/逻辑添加此处【仅调用一次】
+    /// 【原：viewDidLoad公用/调通UI/逻辑迁移至此函数】
+    /// 【Example：界面的CollectionView为大小屏的通用视图，则此处添加，不需要ipadFullScreen和ipadSmallScreen函数处理】
+    open func ipadCommonSetup()  {
+        
     }
     
     /// iPad 全屏模式【仅调用一次】
@@ -50,49 +57,23 @@ extension iPadSplitViewController {
             _updateViewLayoutDependenciesWithCurrentSize(currentSize: size)
         }
     }
-    
+    fileprivate func split_privateIpadCommonSetup () {
+        if !iPadCommonSetuped {
+            ipadCommonSetup()
+            iPadCommonSetuped = true
+        }
+    }
     fileprivate func _updateCurrentInterfaceOrientation()  {
         iPadSplitTool.tool.updateCurrentInterfaceOrientation()
     }
     
     fileprivate func _updateViewLayoutDependenciesWithCurrentSize(currentSize:CGSize) {
-        _updateCurrentInterfaceOrientation()
-        iPadSplitTool.tool.currentScreenWidth = currentSize.width
-        _screenWithCurrentSize(currentSize: currentSize)
-    }
-    
-    fileprivate func _screenWithCurrentSize(currentSize:CGSize) {
         
-        let fullScreenWidth = UIScreen.main.bounds.width
-        let currentWidth = currentSize.width
+        iPadSplitTool.tool.updateCurrentInterfaceOrientation()
+        iPadSplitTool.tool.updateCurrentInterfaceSize(currentSize)
+        iPadSplitTool.tool.updateScreenInterfaceAttributes()
         
-        
-        if iPadSplitTool.tool.interfaceOrientationLandscape {
-            if currentWidth < (fullScreenWidth * 0.40 ) {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadLandscapeThirdScreen)
-            } else if currentWidth < (fullScreenWidth * 0.60) {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadLandscapeHalfScreen)
-            } else if currentWidth < (fullScreenWidth * 0.80) {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadLandscapeTwoThirdScreen)
-            } else {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadLandscapeFullScreen)
-            }
-        } else {
-            
-            if currentWidth < (fullScreenWidth * 0.50 ) {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadPortraitThirdScreen)
-            } else if currentWidth < (fullScreenWidth * 0.70) {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadPortraitTwoThirdScreen)
-            } else {
-                _handleDisplayElementsWhenScreenTypeChanged(changedType: .iPadPortraitFullScreen)
-            }
-        }
-    }
-    
-    fileprivate func _handleDisplayElementsWhenScreenTypeChanged (changedType:ScreenInterfaceType) {
-        
-        iPadSplitTool.tool.fullScreen = (changedType.rawValue < kCHECKISFULLSCREENVALUE)
-        iPadSplitTool.tool.currentScreenInterfaceType = changedType
+        split_privateIpadCommonSetup()
         
         if lastScreenInterfaceType == .Unknown {
             _configLastScreenType()
@@ -104,7 +85,9 @@ extension iPadSplitViewController {
             return
         }
         
-        let isLastFullScreen = (lastScreenInterfaceType.rawValue < kCHECKISFULLSCREENVALUE);
+        let iPadCheckFullScreen:ScreenInterfaceType = .iPadCheckFullScreen
+        
+        let isLastFullScreen = (lastScreenInterfaceType.rawValue < iPadCheckFullScreen.rawValue);
         
         _configLastScreenType()
         

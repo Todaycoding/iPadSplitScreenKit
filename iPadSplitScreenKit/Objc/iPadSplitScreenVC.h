@@ -11,6 +11,11 @@
 
 #pragma mark ---iPad adapter Main function
 
+/// 当前界面共同视图/逻辑添加此处【仅调用一次】
+/// 【原：viewDidLoad公用/调通UI/逻辑迁移至此函数】
+/// 【Example：界面的CollectionView为大小屏的通用视图，则此处添加，不需要ipadFullScreen和ipadSmallScreen函数处理】
+- (void)ipadCommonSetup;
+
 /// iPad 全屏模式【仅调用一次】
 - (void)ipadFullScreen;
 

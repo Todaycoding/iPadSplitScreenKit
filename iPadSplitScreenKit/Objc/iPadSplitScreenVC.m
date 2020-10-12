@@ -12,6 +12,8 @@
 
 @property(nonatomic, assign, getter=isiPadsmallScreenViewLoaded) BOOL iPadsmallScreenViewLoaded;
 
+@property(nonatomic, assign, getter=isiPadCommonSetuped) BOOL iPadCommonSetuped;
+
 @property (nonatomic, assign) SplitScreenInterfaceType lastScreenInterfaceType;
 
 @end
@@ -33,6 +35,8 @@
 
 #pragma mark ---iPad adapter functions
 
+- (void)ipadCommonSetup {}
+
 - (void)ipadSmallToFullScreenConfigurations {}
 
 - (void)ipadFullToSmallScreenConfigurations {}
@@ -47,6 +51,13 @@
     NSAssert(NO, assertMsg);
 }
 
+- (void)split_privateIpadCommonSetup {
+    if (!self.isiPadCommonSetuped) {
+        [self ipadCommonSetup];
+        self.iPadCommonSetuped = YES;
+    }
+}
+
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
     if (self.isViewLoaded) {
@@ -59,6 +70,8 @@
     [iPadSplitScreenStatusTool.tool updateCurrentInterfaceOrientation];
     [iPadSplitScreenStatusTool.tool updateCurrentInterfaceSize:currentSize];
     [iPadSplitScreenStatusTool.tool updateScreenInterfaceAttributes];
+    
+    [self split_privateIpadCommonSetup];
     
     if (self.lastScreenInterfaceType == SplitUnknown) {
         [self split_configLastScreenType];
