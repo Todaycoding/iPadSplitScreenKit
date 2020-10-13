@@ -34,4 +34,17 @@ typedef NS_ENUM(NSInteger, SplitScreenInterfaceType) {
 } API_UNAVAILABLE(watchos, tvos);
 
 
+typedef NS_ENUM(NSInteger, ZDInterfaceChangeType) {
+    ZDInterfaceChangeUnknown                = -1, // 预置占位类型
+    
+    ZDInterfaceChangedEarliest              = 0, // 屏幕改变即第一时间调用【时机最先】
+    
+    ZDInterfaceChanging                     = 1, // 屏幕改变中调用
+    
+    ZDInterfaceChangeLatter                 = 2, // 组件内部处理完成后调用【已完成布局】
+    
+} API_UNAVAILABLE(watchos, tvos);
+
+
+
 #endif /* iPadSplitScreenDefineHeader_h */

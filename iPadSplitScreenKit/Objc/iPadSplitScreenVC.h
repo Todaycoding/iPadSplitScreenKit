@@ -28,5 +28,11 @@
 /// 大屏幕切换到小屏幕【处理逻辑】
 - (void)ipadFullToSmallScreenConfigurations;
 
+/// 每次屏幕改变均调用此函数【分屏操作，横竖屏改变，子类控制器可通过此函数获取时机】
+/// @param changeType changeType
+/// @param currentSize currentSize 
+- (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType
+                            currentSize:(CGSize)currentSize;
+
 @end
 

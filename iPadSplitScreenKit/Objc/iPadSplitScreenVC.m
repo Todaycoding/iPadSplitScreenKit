@@ -41,6 +41,8 @@
 
 - (void)ipadFullToSmallScreenConfigurations {}
 
+- (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType currentSize:(CGSize)currentSize {}
+
 - (void)ipadFullScreen {
     NSString *assertMsg = [NSString stringWithFormat:@"%@【%@】",@"❌：Please implement `ipadFullScreen Function` With", NSStringFromClass([self class])];
     NSAssert(NO, assertMsg);
@@ -61,6 +63,7 @@
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
     if (self.isViewLoaded) {
+        [self ipadInterfaceOrientationChanged:ZDInterfaceChangedEarliest currentSize:size];
         [self split_updateViewLayoutDependenciesWithCurrentSize:size];
     }
 }
@@ -70,6 +73,8 @@
     [iPadSplitScreenStatusTool.tool updateCurrentInterfaceOrientation];
     [iPadSplitScreenStatusTool.tool updateCurrentInterfaceSize:currentSize];
     [iPadSplitScreenStatusTool.tool updateScreenInterfaceAttributes];
+    
+    [self ipadInterfaceOrientationChanged:ZDInterfaceChanging currentSize:currentSize];
     
     [self split_privateIpadCommonSetup];
     
@@ -87,6 +92,7 @@
     BOOL isLastFullScreen = (self.lastScreenInterfaceType < SplitPadCheckFullScreen);
     [self split_configLastScreenType];
     if (isLastFullScreen == SPLITISFULLSCREEN) {
+        [self ipadInterfaceOrientationChanged:ZDInterfaceChangeLatter currentSize:currentSize];
         return;
     }
     
@@ -101,6 +107,8 @@
             [self split_configScreenWithIsFull:YES];
         }
     }
+    
+    [self ipadInterfaceOrientationChanged:ZDInterfaceChangeLatter currentSize:currentSize];
 }
 
 - (void)split_configScreenWithIsFull:(BOOL)isFullScreen {

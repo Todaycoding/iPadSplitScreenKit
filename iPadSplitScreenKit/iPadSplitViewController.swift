@@ -48,6 +48,10 @@ import UIKit
         
     }
     
+    /// 每次屏幕改变均调用此函数【分屏操作，横竖屏改变，子类控制器可通过此函数获取时机】
+    open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,currentSize:CGSize) {
+        
+    }
 }
 
 extension iPadSplitViewController {
@@ -55,6 +59,7 @@ extension iPadSplitViewController {
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {    
         if self.isViewLoaded {
             _updateViewLayoutDependenciesWithCurrentSize(currentSize: size)
+            ipadInterfaceOrientationChanged(changeType: .changedEarliest, currentSize: size)
         }
     }
     fileprivate func split_privateIpadCommonSetup () {
@@ -72,6 +77,8 @@ extension iPadSplitViewController {
         iPadSplitTool.tool.updateCurrentInterfaceOrientation()
         iPadSplitTool.tool.updateCurrentInterfaceSize(currentSize)
         iPadSplitTool.tool.updateScreenInterfaceAttributes()
+        
+        ipadInterfaceOrientationChanged(changeType: .changing, currentSize: currentSize)
         
         split_privateIpadCommonSetup()
         
@@ -92,6 +99,7 @@ extension iPadSplitViewController {
         _configLastScreenType()
         
         if (isLastFullScreen == iPadSplitTool.tool.fullScreen) {
+            ipadInterfaceOrientationChanged(changeType: .ChangedLatter, currentSize: currentSize)
             return
         }
         
@@ -106,6 +114,7 @@ extension iPadSplitViewController {
                 handleScreenChanged(isFullScreen: true)
             }
         }
+        ipadInterfaceOrientationChanged(changeType: .ChangedLatter, currentSize: currentSize)
     }
     
     

@@ -21,6 +21,10 @@ class ViewController:iPadSplitViewController {
         currentScreenType()
     }
      
+    override func ipadCommonSetup() {
+        print("调通逻辑已调用【UI/业务】")
+    }
+    
     func currentScreenType() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10.0) {
             if iPadSplitTool.tool.fullScreen {

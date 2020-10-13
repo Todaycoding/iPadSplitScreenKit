@@ -27,3 +27,15 @@ public enum ScreenInterfaceType: Int {
     
     case  iPadPortraitTwoThirdScreen   = 104 // 约 6/10屏幕 竖屏【Pad】
 }
+
+public enum ScreenInterfaceChangeType: Int {
+    
+    case  Unknown                      = -1 // 预置占位类型
+    
+    case  changedEarliest              =  0 //  屏幕改变即第一时间调用【时机最先】
+    
+    case  changing                     =  1 // 屏幕改变中调用
+    
+    case  ChangedLatter                =  2 //组件内部处理完成后调用【已完成布局】
+}
+

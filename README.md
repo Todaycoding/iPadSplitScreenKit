@@ -6,13 +6,19 @@
 [![License](https://img.shields.io/cocoapods/l/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 [![Platform](https://img.shields.io/cocoapods/p/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 
+
+## 【分屏】【横竖屏】
+
 > OC/Swift项目均可使用【参考下文Install部分】，提供能力来快速适配IPad项目的分屏，悬浮屏，横竖屏等
 
-- [官网教程：在 iPad 上使用多任务处理功能](https://support.apple.com/zh-cn/HT207582)
-	- 不同样式，需要APP内部适配处理不同UI。
-	- 针对APP启动（可以分屏模式启动），也需要处理。
-	- 可运行Demo体验【当前为2/3横屏模式为全屏展示，其他为小屏幕模式，此处后期支持自定义】。
+-  随时获取是否全屏状态，是否横屏状态，当前屏幕具体状态 （当前实际用户可见显示最大宽度，高度）✅
+- 支持APP启动分屏模式适配，✅
+- 布局不同样式/场景下:通用逻辑部分，大小屏逻辑 ✅
 
+#### [官网教程：在 iPad 上使用多任务处理功能](https://support.apple.com/zh-cn/HT207582)
+- 不同样式，需要APP内部适配处理不同UI。
+- 针对APP启动（可以分屏模式启动），也需要处理。
+- 可运行Demo体验【当前为2/3横屏模式为全屏展示，其他为小屏幕模式，此处后期支持自定义】。
 - ![](https://support.apple.com/library/content/dam/edam/applecare/images/zh_CN/iOS/ios13-ipad-pro-multitasking-split-view-animation.gif)
 
 
@@ -25,10 +31,10 @@
 ```ruby
 
 // Default Swift 
-pod 'iPadSplitScreenKit','~1.1.0'
+pod 'iPadSplitScreenKit','~1.1.1'
 
 // ObjC
-pod 'iPadSplitScreenKit/ObjC','~1.1.0'
+pod 'iPadSplitScreenKit/ObjC','~1.1.1'
 
 ```
 
@@ -79,6 +85,13 @@ pod 'iPadSplitScreenKit/ObjC','~1.1.0'
 /// 大屏幕切换到小屏幕【处理逻辑】
 - (void)ipadFullToSmallScreenConfigurations;
 
+/// 每次屏幕改变均调用此函数【分屏操作，横竖屏改变，子类控制器可通过此函数获取时机】
+/// @param changeType changeType
+/// @param currentSize currentSize 
+- (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType
+                            currentSize:(CGSize)currentSize;
+
+
 ```
 
 ```Swift
@@ -107,7 +120,12 @@ open func ipadSmallToFullScreenConfigurations()  {
 open func ipadFullToSmallScreenConfigurations()  {
     
 }
-    
+   
+/// 每次屏幕改变均调用此函数【分屏操作，横竖屏改变，子类控制器可通过此函数获取时机】
+open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,currentSize:CGSize) {
+   
+}   
+   
 ```
 
 ### iPadSplitScreen 使用说明
