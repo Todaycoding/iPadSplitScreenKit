@@ -20,9 +20,9 @@ class ViewController:iPadSplitViewController {
         view.backgroundColor = .darkGray
         currentScreenType()
     }
-     
+    
     override func ipadCommonSetup() {
-        print("调通逻辑已调用【UI/业务】")
+        print("公共逻辑已调用（当前界面共有的tableView等）【UI/业务】")
     }
     
     func currentScreenType() {
@@ -63,6 +63,10 @@ class ViewController:iPadSplitViewController {
         fullScreenButton?.isHidden = true
         smallScreenLabel?.isHidden = false
         print("大屏幕模式->小屏幕模式")
+    }
+    
+    override func ipadInterfaceOrientationChanged(changeType: ScreenInterfaceChangeType, currentSize: CGSize) {
+        print("检测到屏幕变化\(currentSize)")
     }
 }
 

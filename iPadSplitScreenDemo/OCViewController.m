@@ -56,6 +56,9 @@
     self.smallScreenLabel.hidden = NO;
 }
 
+- (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType currentSize:(CGSize)currentSize {
+    NSLog(@"检测到屏幕变化%@",NSStringFromCGSize(currentSize));
+}
 
 #pragma mark --- demo UI
 
