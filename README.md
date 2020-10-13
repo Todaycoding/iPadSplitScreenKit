@@ -31,10 +31,10 @@
 ```ruby
 
 // Default Swift 
-pod 'iPadSplitScreenKit','~1.1.1'
+pod 'iPadSplitScreenKit','~1.1.2'
 
 // ObjC
-pod 'iPadSplitScreenKit/ObjC','~1.1.1'
+pod 'iPadSplitScreenKit/ObjC','~1.1.2'
 
 ```
 

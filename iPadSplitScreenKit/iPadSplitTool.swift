@@ -30,7 +30,10 @@ import Foundation
     }
     
     internal func updateCurrentInterfaceOrientation()  {
-        interfaceOrientationLandscape = UIApplication.shared.statusBarOrientation.isLandscape
+//        interfaceOrientationLandscape = UIApplication.shared.statusBarOrientation.isLandscape
+        let fullWidth = UIScreen.main.bounds.width
+        let fullHeight = UIScreen.main.bounds.height
+        interfaceOrientationLandscape = fullWidth > fullHeight;
     }
     
     

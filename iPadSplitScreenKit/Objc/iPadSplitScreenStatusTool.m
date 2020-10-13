@@ -34,7 +34,9 @@
 }
 
 - (void)updateCurrentInterfaceOrientation {
-    self.interfaceOrientationLandscape = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
+    CGFloat fullWidth = UIScreen.mainScreen.bounds.size.width;
+    CGFloat fullHeight = UIScreen.mainScreen.bounds.size.height;
+    self.interfaceOrientationLandscape = fullWidth > fullHeight;
 }
 
 - (void)updateCurrentInterfaceSize:(CGSize)currentsize {
