@@ -9,7 +9,7 @@
 #import <iPadSplitScreenKit/iPadSplitScreenDefineHeader.h>
 
 /// BOOL 类型
-#define SPLITISFULLSCREEN (iPadSplitScreenStatusTool.tool.fullScreen)
+#define SPLITISFULLSCREEN (iPadSplitScreenStatusTool.defaultool.fullScreen)
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateScreenInterfaceAttributes;
 
-+ (instancetype)tool;
++ (instancetype)defaultool;
 
 
 @end

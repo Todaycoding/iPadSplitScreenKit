@@ -22,7 +22,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [iPadSplitScreenStatusTool.tool updateCurrentInterfaceOrientation];
         self.lastScreenInterfaceType = SplitUnknown;
     }
     return self;
@@ -70,9 +69,9 @@
 
 - (void)split_updateViewLayoutDependenciesWithCurrentSize:(CGSize)currentSize {
     
-    [iPadSplitScreenStatusTool.tool updateCurrentInterfaceOrientation];
-    [iPadSplitScreenStatusTool.tool updateCurrentInterfaceSize:currentSize];
-    [iPadSplitScreenStatusTool.tool updateScreenInterfaceAttributes];
+    [iPadSplitScreenStatusTool.defaultool updateCurrentInterfaceOrientation];
+    [iPadSplitScreenStatusTool.defaultool updateCurrentInterfaceSize:currentSize];
+    [iPadSplitScreenStatusTool.defaultool updateScreenInterfaceAttributes];
     
     [self ipadInterfaceOrientationChanged:ZDInterfaceChanging currentSize:currentSize];
     
@@ -122,7 +121,7 @@
 }
 
 - (void)split_configLastScreenType {
-    self.lastScreenInterfaceType = iPadSplitScreenStatusTool.tool.currentScreenInterfaceType;
+    self.lastScreenInterfaceType = iPadSplitScreenStatusTool.defaultool.currentScreenInterfaceType;
 }
 
 @end

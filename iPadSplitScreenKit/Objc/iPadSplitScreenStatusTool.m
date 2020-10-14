@@ -24,11 +24,12 @@
 
 @implementation iPadSplitScreenStatusTool
 
-+ (instancetype)tool {
++ (instancetype)defaultool {
     static iPadSplitScreenStatusTool *tool;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         tool = [[self alloc] init];
+        [tool updateCurrentInterfaceOrientation];
     });
     return tool;
 }
