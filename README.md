@@ -31,10 +31,10 @@
 ```ruby
 
 // Default Swift 
-pod 'iPadSplitScreenKit','~>1.1.2'
+pod 'iPadSplitScreenKit','~>1.1.0'
 
 // ObjC
-pod 'iPadSplitScreenKit/ObjC','~>1.1.2'
+pod 'iPadSplitScreenKit/ObjC','~>1.1.0'
 
 ```
 
@@ -139,6 +139,38 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
  -  屏幕出现需要改变布局时刻【移除当前部分视图，保存当前session数据等场景,请ipadSmallToFull/ipadSmallToFull中处理。
 
  -  当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
+ 
+ 
+ - `ipadInterfaceOrientationChanged`函数界面渲染后，每次改变均会调用三次！！！，需要通过枚举过滤时机
+ 
+ ```
+【需要等待屏幕旋转改变，大小屏切换函数执行后，再处理逻辑，则参考如下】
+ 
+ - (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType
+                             currentSize:(CGSize)currentSize {
+    if (changeType != ZDInterfaceChangeLatter) {
+        return;
+    }
+    // you custom code
+ }
+ 
+ 
+ 【当前是否从小屏幕转化为小屏幕，或者大屏幕转化为大屏幕需要调整细节】
+ 
+ - (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType
+                             currentSize:(CGSize)currentSize {
+     if (changeType != ZDInterfaceChangeLatter) {
+         return;
+     }
+ 
+     if (!ZDISFullScreen) {
+       // 当前切换到小屏幕的逻辑调整
+     }  else {
+      
+    }
+ }
+ 
+ ```
  
  #### 辅助说明：
  
