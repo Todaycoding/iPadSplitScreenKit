@@ -64,6 +64,8 @@
     if (self.isViewLoaded) {
         [self ipadInterfaceOrientationChanged:ZDInterfaceChangedEarliest currentSize:size];
         [self split_updateViewLayoutDependenciesWithCurrentSize:size];
+    } else {
+        [self ipadInterfaceOrientationChanged:ZDInterfacePageFristRendering currentSize:size];
     }
 }
 
@@ -72,9 +74,7 @@
     [iPadSplitScreenStatusTool.defaultool updateCurrentInterfaceOrientation];
     [iPadSplitScreenStatusTool.defaultool updateCurrentInterfaceSize:currentSize];
     [iPadSplitScreenStatusTool.defaultool updateScreenInterfaceAttributes];
-    
-    [self ipadInterfaceOrientationChanged:ZDInterfaceChanging currentSize:currentSize];
-    
+        
     [self split_privateIpadCommonSetup];
     
     if (self.lastScreenInterfaceType == SplitUnknown) {

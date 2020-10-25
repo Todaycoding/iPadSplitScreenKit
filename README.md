@@ -1,24 +1,26 @@
 # iPadSplitScreenKit
 
-> **iPad 分屏基础组件**
+> **iPad APP 分屏基础能力组件**
 
 [![Version](https://img.shields.io/cocoapods/v/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 [![License](https://img.shields.io/cocoapods/l/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 [![Platform](https://img.shields.io/cocoapods/p/iPadSplitScreenKit.svg?style=flat)](https://cocoapods.org/pods/iPadSplitScreenKit)
 
 
-## 【分屏】【横竖屏】
+## 【分屏】&&【横竖屏】
 
-> OC/Swift项目均可使用【参考下文Install部分】，提供能力来快速适配IPad项目的分屏，悬浮屏，横竖屏等
+> ObjC/Swift项目(**纯OC/Swift/混编**)均可使用【参考下文Install部分】，提供能力来快速适配IPad项目的分屏，悬浮屏，横竖屏等
 
 -  随时获取是否全屏状态，是否横屏状态，当前屏幕具体状态 （当前实际用户可见显示最大宽度，高度）✅
-- 支持APP启动分屏模式适配，✅
+- 支持APP启动分屏模式适配✅
+	- 首次渲染时机捕获【打点，布局等】
 - 布局不同样式/场景下:通用逻辑部分，大小屏逻辑 ✅
 
 #### [官网教程：在 iPad 上使用多任务处理功能](https://support.apple.com/zh-cn/HT207582)
 - 不同样式，需要APP内部适配处理不同UI。
 - 针对APP启动（可以分屏模式启动），也需要处理。
 - 可运行Demo体验【当前为2/3横屏模式为全屏展示，其他为小屏幕模式，此处后期支持自定义】。
+
 - ![](https://support.apple.com/library/content/dam/edam/applecare/images/zh_CN/iOS/ios13-ipad-pro-multitasking-split-view-animation.gif)
 
 
@@ -26,7 +28,7 @@
 
 > iPadSplitScreenKit is available through [Cocoapods](https://cocoapods.org/pods/iPadSplitScreenKit). To install it, simply add the following line to your Podfile:
 
-> Objc和SwiftPod 可同时安装，也可以单独安装指定语言。
+> Objc和SwiftPod 可同时安装，也可单独安装某一语言。
 
 ```ruby
 
@@ -130,7 +132,7 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
 
 ### iPadSplitScreen 使用说明
  
- -  界面控制器继承此控制器类
+ - 界面控制器继承此控制器类
 
  - viewDidLoad拆分到`ipadFullScreen`或者`ipadSmallScreen`实现【仅UI逻辑：布局，交互等】。
     
@@ -141,7 +143,7 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
  -  当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
  
  
- - `ipadInterfaceOrientationChanged`函数界面渲染后，每次改变均会调用三次！！！，需要通过枚举过滤时机
+ - `ipadInterfaceOrientationChanged`函数界面渲染后，**每次改变均会调用2次！！！**，需要通过枚举过滤时机
  
  ```
 【需要等待屏幕旋转改变，大小屏切换函数执行后，再处理逻辑，则参考如下】
@@ -201,7 +203,6 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
 -  竖屏
     -  320     438   768  mini
     -  0.41    0.57  1.00
-
 
 
 Author 

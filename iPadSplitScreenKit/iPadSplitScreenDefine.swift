@@ -17,7 +17,7 @@ public enum ScreenInterfaceType: Int {
     
     case  iPadLandscapeTwoThirdScreen  = 2  // 约 2/3屏幕 横屏【Pad】
     
-    case  iPadCheckFullScreen          = 100 // 基准类型
+    case  iPadCheckFullScreen          = 100 // 基准类型 // 基准类型【可判断是否全屏幕显示的类型】
     
     case  iPadLandscapeHalfScreen      = 101 // 约 1/2屏幕 横屏【Pad】
     
@@ -33,9 +33,9 @@ public enum ScreenInterfaceChangeType: Int {
     case  Unknown                      = -1 // 预置占位类型
     
     case  changedEarliest              =  0 //  屏幕改变即第一时间调用【时机最先】
+
+    case  pageFristRendering           =  1 //当前界面首次渲染的类型
     
-    case  changing                     =  1 // 屏幕改变中调用
-    
-    case  ChangedLatter                =  2 //组件内部处理完成后调用【已完成布局】
+    case  changedLatter                =  2 //组件内部处理完成后调用【已完成布局】
 }
 

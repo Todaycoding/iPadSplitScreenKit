@@ -9,7 +9,6 @@
 #define iPadSplitScreenDefineHeader_h
 
 /// APP 横竖屏详细状态
-
 typedef NS_ENUM(NSInteger, SplitScreenInterfaceType) {
     
     SplitUnknown                     = -1, // 预置占位类型
@@ -20,8 +19,7 @@ typedef NS_ENUM(NSInteger, SplitScreenInterfaceType) {
     
     SplitPadLandscapeTwoThirdScreen  = 2,  // 约2/3屏幕 横屏【Pad】
     
-    //#define kCHECKISFULLSCREENVALUE 100
-    SplitPadCheckFullScreen          = 100, // 基准类型
+    SplitPadCheckFullScreen          = 100, // 基准类型【可判断是否全屏幕显示的类型】
     
     SplitPadLandscapeHalfScreen      = 101,  //  约1/2屏幕 横屏【Pad】
     
@@ -37,11 +35,11 @@ typedef NS_ENUM(NSInteger, SplitScreenInterfaceType) {
 typedef NS_ENUM(NSInteger, ZDInterfaceChangeType) {
     ZDInterfaceChangeUnknown                = -1, // 预置占位类型
     
-    ZDInterfaceChangedEarliest              = 0, // 屏幕改变即第一时间调用【时机最先】
+    ZDInterfaceChangedEarliest              = 0, // 屏幕改变即第一时间调用于当前界面【时机最先】
     
-    ZDInterfaceChanging                     = 1, // 屏幕改变中调用
+    ZDInterfacePageFristRendering           = 1, // 当前界面首次渲染的类型
     
-    ZDInterfaceChangeLatter                 = 2, // 组件内部处理完成后调用【已完成布局】
+    ZDInterfaceChangeLatter                 = 2, // 组件内部处理完成后调用于当前界面【已完成布局】
     
 } API_UNAVAILABLE(watchos, tvos);
 

@@ -60,6 +60,8 @@ extension iPadSplitViewController {
         if self.isViewLoaded {
             _updateViewLayoutDependenciesWithCurrentSize(currentSize: size)
             ipadInterfaceOrientationChanged(changeType: .changedEarliest, currentSize: size)
+        } else {
+            ipadInterfaceOrientationChanged(changeType: .pageFristRendering, currentSize: size)
         }
     }
     fileprivate func split_privateIpadCommonSetup () {
@@ -77,9 +79,7 @@ extension iPadSplitViewController {
         iPadSplitTool.tool.updateCurrentInterfaceOrientation()
         iPadSplitTool.tool.updateCurrentInterfaceSize(currentSize)
         iPadSplitTool.tool.updateScreenInterfaceAttributes()
-        
-        ipadInterfaceOrientationChanged(changeType: .changing, currentSize: currentSize)
-        
+                
         split_privateIpadCommonSetup()
         
         if lastScreenInterfaceType == .Unknown {
@@ -99,7 +99,7 @@ extension iPadSplitViewController {
         _configLastScreenType()
         
         if (isLastFullScreen == iPadSplitTool.tool.fullScreen) {
-            ipadInterfaceOrientationChanged(changeType: .ChangedLatter, currentSize: currentSize)
+            ipadInterfaceOrientationChanged(changeType: .changedLatter, currentSize: currentSize)
             return
         }
         
@@ -114,7 +114,7 @@ extension iPadSplitViewController {
                 handleScreenChanged(isFullScreen: true)
             }
         }
-        ipadInterfaceOrientationChanged(changeType: .ChangedLatter, currentSize: currentSize)
+        ipadInterfaceOrientationChanged(changeType: .changedLatter, currentSize: currentSize)
     }
     
     
