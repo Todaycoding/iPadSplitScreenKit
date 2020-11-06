@@ -66,7 +66,7 @@ class ViewController:iPadSplitViewController {
     }
     
     override func ipadInterfaceOrientationChanged(changeType: ScreenInterfaceChangeType, currentSize: CGSize) {
-        print("检测到屏幕变化\(currentSize)")
+        print("函数回调：检测到屏幕尺寸变化为\(currentSize)")
     }
 }
 

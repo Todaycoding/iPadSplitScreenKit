@@ -24,7 +24,7 @@
 }
 
 - (void)isFullScreenCheckDemo {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (SPLITISFULLSCREEN) {
             NSLog(@"当前为全屏UI模式");
         } else {
@@ -57,7 +57,7 @@
 }
 
 - (void)ipadInterfaceOrientationChanged:(ZDInterfaceChangeType)changeType currentSize:(CGSize)currentSize {
-    NSLog(@"检测到屏幕变化%@",NSStringFromCGSize(currentSize));
+    NSLog(@"函数回调：检测到屏幕变化%@",NSStringFromCGSize(currentSize));
 }
 
 #pragma mark --- demo UI

@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, SplitScreenInterfaceType) {
 
 
 typedef NS_ENUM(NSInteger, ZDInterfaceChangeType) {
+    
     ZDInterfaceChangeUnknown                = -1, // 预置占位类型
     
     ZDInterfaceChangedEarliest              = 0, // 屏幕改变即第一时间调用于当前界面【时机最先】

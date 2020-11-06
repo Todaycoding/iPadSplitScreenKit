@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <iPadSplitScreenKit/iPadSplitScreenDefineHeader.h>
 
-/// BOOL 类型
+/// BOOL  【判断当前是否全屏模式】
 #define SPLITISFULLSCREEN (iPadSplitScreenStatusTool.defaultool.fullScreen)
 
 NS_ASSUME_NONNULL_BEGIN
@@ -36,14 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// 【获取时机：APP首屏渲染后】
 @property (nonatomic, assign, readonly)CGFloat currentScreenHeight;
 
++ (instancetype)defaultool;
+
 - (void)updateCurrentInterfaceOrientation;
+
+#pragma mark -以下函数不建议外界调用
 
 - (void)updateCurrentInterfaceSize:(CGSize)currentsize;
 
 - (void)updateScreenInterfaceAttributes;
-
-+ (instancetype)defaultool;
-
 
 @end
 

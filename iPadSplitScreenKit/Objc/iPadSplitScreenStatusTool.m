@@ -35,6 +35,7 @@
 }
 
 - (void)updateCurrentInterfaceOrientation {
+    // 此方式仅限于iPad 机型判断横竖屏
     CGFloat fullWidth = UIScreen.mainScreen.bounds.size.width;
     CGFloat fullHeight = UIScreen.mainScreen.bounds.size.height;
     self.interfaceOrientationLandscape = fullWidth > fullHeight;

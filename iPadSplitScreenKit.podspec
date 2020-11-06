@@ -1,11 +1,15 @@
 Pod::Spec.new do |s|
   s.name         = "iPadSplitScreenKit"
-  s.version      = "1.1.5"
-  s.summary      = "iPadSplitScreenKit"
+  s.version      = "1.1.6"
+  s.summary      = "iPadSplitScreenKit:提供iPad分屏及横竖屏相关基础能力"
   
-  s.description  = <<-DESC
-iPadSplitScreenKit（iPad分屏组件）
-                   DESC
+  s.description  = "
+  iPadSplitScreenKit（iPad分屏组件）
+    随时获取是否全屏状态，是否横屏状态，当前屏幕具体状态 （当前实际用户可见显示最大宽度，高度）
+    支持APP启动分屏模式适配
+    首次渲染时机捕获【打点，布局等】
+    布局不同样式,场景下:通用逻辑部分，大小屏逻辑
+                   "
   s.homepage         = 'https://github.com/Todaycoding/iPadSplitScreenKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'DevDragonli' => 'Dragonli_52171@163.com' }
