@@ -1,8 +1,8 @@
 PODS:
-  - iPadSplitScreenKit (1.1.6):
-    - iPadSplitScreenKit/Swift (= 1.1.6)
-  - iPadSplitScreenKit/ObjC (1.1.6)
-  - iPadSplitScreenKit/Swift (1.1.6)
+  - iPadSplitScreenKit (1.1.7):
+    - iPadSplitScreenKit/Swift (= 1.1.7)
+  - iPadSplitScreenKit/ObjC (1.1.7)
+  - iPadSplitScreenKit/Swift (1.1.7)
 
 DEPENDENCIES:
   - iPadSplitScreenKit (from `./`)
@@ -13,8 +13,8 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  iPadSplitScreenKit: 41f044b9fb0aeaf3259de66580cfe7b4001aefb3
+  iPadSplitScreenKit: 397c95b8c833f028a7590bff7c984152ea33a741
 
-PODFILE CHECKSUM: 4299f035224cff562b9a12578265e8bc4dbaad9a
+PODFILE CHECKSUM: 012f885d64939d70482905da444cb5fb7a3c859d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

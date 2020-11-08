@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iPadSplitScreenKit"
-  s.version      = "1.1.6"
+  s.version      = "1.1.7"
   s.summary      = "iPadSplitScreenKit:提供iPad分屏及横竖屏相关基础能力"
   
   s.description  = "
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author           = { 'DevDragonli' => 'Dragonli_52171@163.com' }
   s.source           = { :git => 'https://github.com/Todaycoding/iPadSplitScreenKit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '9.0'
   
   s.default_subspec = 'Swift'
   

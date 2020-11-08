@@ -10,7 +10,7 @@
 ## 【分屏】&&【横竖屏】
 
 > ObjC/Swift项目(**纯OC/Swift/混编**)均可使用【参考下文Install部分】，提供能力来快速适配IPad项目的分屏，悬浮屏，横竖屏等
-
+- 支持版本：**iOS9+**
 -  随时获取是否全屏状态，是否横屏状态，当前屏幕具体状态 （当前实际用户可见显示最大宽度，高度）✅
 - 支持APP启动分屏模式适配✅
 	- 首次渲染时机捕获【打点，布局等】
@@ -143,7 +143,7 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
  -  当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
  
  
- - `ipadInterfaceOrientationChanged`函数界面渲染后，**每次改变均会调用2次！！！**，需要通过枚举过滤时机
+ - `ipadInterfaceOrientationChanged`函数界面渲染后，**每次改变均会调用2次！！！**，需要通过枚举过滤时机【看项目需求】
  
  ```
 【需要等待屏幕旋转改变，大小屏切换函数执行后，再处理逻辑，则参考如下】
@@ -165,7 +165,7 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
          return;
      }
  
-     if (!ZDISFullScreen) {
+     if (!SPLITISFULLSCREEN) {
        // 当前切换到小屏幕的逻辑调整
      }  else {
       
@@ -174,7 +174,7 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
  
  ```
  
- #### 辅助说明：
+ #### 备注说明：
  
  - 判断当前是否全屏【OC使用此宏即可】 ： SPLITISFULLSCREEN
 
