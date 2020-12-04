@@ -74,7 +74,7 @@
     [iPadSplitScreenStatusTool.defaultool updateCurrentInterfaceOrientation];
     [iPadSplitScreenStatusTool.defaultool updateCurrentInterfaceSize:currentSize];
     [iPadSplitScreenStatusTool.defaultool updateScreenInterfaceAttributes];
-        
+    [[NSNotificationCenter defaultCenter] postNotificationName:SplitScreenChangeNotification object:nil];
     [self split_privateIpadCommonSetup];
     
     if (self.lastScreenInterfaceType == SplitUnknown) {

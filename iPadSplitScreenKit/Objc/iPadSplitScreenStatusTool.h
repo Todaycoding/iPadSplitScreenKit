@@ -11,6 +11,9 @@
 /// BOOL  【判断当前是否全屏模式】
 #define SPLITISFULLSCREEN (iPadSplitScreenStatusTool.defaultool.fullScreen)
 
+/// 屏幕发生分屏/横竖屏切换行为，会通知抛出 【时机：此单利已配置完成】
+FOUNDATION_EXTERN NSString * _Nonnull const SplitScreenChangeNotification;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface iPadSplitScreenStatusTool : NSObject

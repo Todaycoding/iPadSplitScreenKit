@@ -16,6 +16,7 @@ class ViewController:iPadSplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "点击空白处展示OC版本"
         view.backgroundColor = .darkGray
         currentScreenType()

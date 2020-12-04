@@ -142,6 +142,9 @@ open func ipadInterfaceOrientationChanged(changeType:ScreenInterfaceChangeType,c
 
  -  当前屏幕旋转，改变大小，若不需要改变布局，则相关函数不会触发，悉知。
  
+ - 每次屏幕改动，会抛出通知 `SplitScreenChangeNotification`
+    - 场景：通过控制器传递/控制链较长，则需要对应视图自身收到事件，内部处理【弹框嵌套类】
+    - 需要项目内判断是否需要处理【当前控制器界面的视图才处理】
  
  - `ipadInterfaceOrientationChanged`函数界面渲染后，**每次改变均会调用2次！！！**，需要通过枚举过滤时机【看项目需求】
  

@@ -79,7 +79,7 @@ extension iPadSplitViewController {
         iPadSplitTool.tool.updateCurrentInterfaceOrientation()
         iPadSplitTool.tool.updateCurrentInterfaceSize(currentSize)
         iPadSplitTool.tool.updateScreenInterfaceAttributes()
-                
+        NotificationCenter.default.post(name: Notification.Name.init(iPadSplitTool.SplitScreenChangeNotification), object: nil)
         split_privateIpadCommonSetup()
         
         if lastScreenInterfaceType == .Unknown {

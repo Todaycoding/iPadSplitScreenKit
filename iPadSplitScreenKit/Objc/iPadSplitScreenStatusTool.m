@@ -7,6 +7,9 @@
 
 #import "iPadSplitScreenStatusTool.h"
 
+NSString * _Nonnull const SplitScreenChangeNotification = @"kSplitScreenChangeNotification";
+
+
 @interface iPadSplitScreenStatusTool ()
 
 @property (nonatomic, assign, getter=isFullScreen) BOOL fullScreen;

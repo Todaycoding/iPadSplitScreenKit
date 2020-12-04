@@ -21,6 +21,10 @@ import Foundation
     
     public internal (set) var currentScreenInterfaceType: ScreenInterfaceType
     
+    public static var SplitScreenChangeNotification : String {
+        "kSplitScreenChangeNotification"
+    }
+    
     private init() {
         interfaceOrientationLandscape = false
         fullScreen = false

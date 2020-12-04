@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iPadSplitScreenKit"
-  s.version      = "1.1.7"
+  s.version      = "1.2.0"
   s.summary      = "iPadSplitScreenKit:提供iPad分屏及横竖屏相关基础能力"
   
   s.description  = "
