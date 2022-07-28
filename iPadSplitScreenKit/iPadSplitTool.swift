@@ -37,7 +37,7 @@ import Foundation
 //        interfaceOrientationLandscape = UIApplication.shared.statusBarOrientation.isLandscape
         let fullWidth = UIScreen.main.bounds.width
         let fullHeight = UIScreen.main.bounds.height
-        interfaceOrientationLandscape = fullWidth > fullHeight;
+        interfaceOrientationLandscape = fullWidth > fullHeight
     }
     
     
@@ -45,8 +45,8 @@ import Foundation
         if currentsize.equalTo(CGSize.zero) {
             return;
         }
-        self.currentScreenWidth = currentsize.width;
-        self.currentScreenHeight = currentsize.height;
+        self.currentScreenWidth = currentsize.width
+        self.currentScreenHeight = currentsize.height
     }
     
     internal func updateScreenInterfaceAttributes()  {
@@ -72,7 +72,7 @@ import Foundation
             }
         }
         let iPadCheckFullScreen:ScreenInterfaceType = .iPadCheckFullScreen
-        fullScreen = (currentScreenInterfaceType.rawValue < iPadCheckFullScreen.rawValue);
+        fullScreen = (currentScreenInterfaceType.rawValue < iPadCheckFullScreen.rawValue)
     }
     
 }
